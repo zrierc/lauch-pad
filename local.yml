@@ -1,0 +1,15 @@
+- hosts: localhost
+  vars:
+    user: "zrie"
+  pre_tasks:
+  - name: Update apt
+    become: true
+    apt:
+      force_apt_get: true
+      update_cache: true
+      state: present
+    tags:
+      - install
+      - core
+  tasks:
+    - include: tasks/zsh.yml
