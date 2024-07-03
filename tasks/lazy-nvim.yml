@@ -1,0 +1,11 @@
+- name: Install Lazyvim
+  ansible.builtin.git:
+    repo: 'https://github.com/LazyVim/starter'
+    dest: "/home/{{ user }}/.config/nvim"
+  tags:
+    - lazyvim
+
+- name: Cleanup Repo
+  Shell: "rm -rf /home/{{ name }}/.config/nvim/.git"
+  tags:
+    - lazyvim

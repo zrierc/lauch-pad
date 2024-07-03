@@ -1,0 +1,7 @@
+
+- name: Install Neovim
+  apt: name=neovim
+  tags:
+    - "install"
+    - "neovim"
+    - "core"
