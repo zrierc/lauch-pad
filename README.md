@@ -31,6 +31,22 @@ ansible-playbook -t dotfiles local.yml
 
 ## Test
 
+### Validating Playbooks using Linter
+
+https://ansible.readthedocs.io/projects/lint/
+
+[learn more](https://docs.ansible.com/ansible/latest/community/other_tools_and_programs.html#validate-playbook-tools)
+
+### Run Playbook in Check Mode
+
+```bash
+ansible-playbook --check local.yml
+```
+
+[learn more](https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_intro.html#running-playbooks-in-check-mode)
+
+### Use docker to test the automation script
+
 - Build image
 
 ```bash
