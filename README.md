@@ -2,6 +2,11 @@
 
 Personal scripts for setup, load dotfiles and automate configuration for new environments.
 
+### TODO
+
+[ ] Integrate with my dotfiles
+[ ] Setup private config (ssh, git, pass-manager, vpn, etc)
+
 ## Pre-Requisite
 
 - Ansible
@@ -25,8 +30,6 @@ ansible-playbook -t dotfiles local.yml
 > The command above will start automation script to install required tools, deps and conf for dotfiles only.
 
 ## Test
-
-Use docker to test the automation script
 
 - Build image
 
