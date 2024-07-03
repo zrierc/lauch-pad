@@ -1,0 +1,31 @@
+- name: Install System Packages
+  become: true
+  apt:
+    name: [ "build-essential", "cmake", "pkg-config", "libpthread-stubs0-dev", "curl", "unzip", "zip", "libtool", "lsof", "libtool-bin", "gettext", "ccache", "ninja-build", "dconf-editor", "moreutils", "clangd" ]
+  tags:
+    - install
+    - core
+
+- name: Install System Monitors
+  become: true
+  apt:
+    name: [ "htop", "btop" ]
+  tags: 
+    - install
+    - core
+      
+- name: Install Network Utils
+  become: true
+  apt:
+    name: [ "net-utils", "traceroute", "tcpdump", "wireshark", "nmap" ]
+  tags:
+    - install
+    - core
+
+- name: Install Productivity Tools [CLIs]
+  become: true
+  apt:
+    name: [ "tmux", "fzf", "xclip", "screenkey", "tldr", "ripgrep", "bat" ]
+  tags:
+    - install
+    - core
