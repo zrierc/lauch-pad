@@ -1,0 +1,39 @@
+- name: Install Yarn
+  npm:
+    name: yarn
+    global: yes
+  tags:
+    - install
+    - programming-languages
+    - nodejs
+
+- name: Install Typescript
+  npm:
+    name: typescript
+    global: yes
+  tags:
+    - install
+    - programming-languages
+    - nodejs
+    - ts
+    - typescript
+
+- name: Install TS-Node
+  npm:
+    name: ts-node
+    global: yes
+  tags:
+    - install
+    - programming-languages
+    - nodejs
+    - ts
+    - typescript
+
+- name: Install eslint
+  npm:
+    name: eslint
+    global: yes
+  tags:
+    - install
+    - programming-languages
+    - nodejs

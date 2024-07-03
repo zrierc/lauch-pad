@@ -1,0 +1,17 @@
+- name: Install nvm
+  ansible.builtin.shell: >
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+  args:
+    creates: "{{ ansible_env.HOME }}/.nvm/nvm.sh"
+  tags:
+    - install
+    - programming-languages
+    - nodejs
+
+- name: Install Node LTS
+  shell: nvm install --lts
+  tags:
+    - install
+    - programming-languages
+    - nodejs
+
