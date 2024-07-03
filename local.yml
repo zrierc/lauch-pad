@@ -10,7 +10,6 @@
       state: present
     tags:
       - install
-      - core
   tasks:
     - include: tasks/zsh.yml
     - include: tasks/core-setup.yml
@@ -22,4 +21,6 @@
     - include: tasks/neovim.yml
     - include: tasks/lunar-nvim.yml
     - include: tasks/lazy-nvim.yml
-
+    - include: tasks/desktop/productivity-apps.yml
+    - include: tasks/desktop/browsers.yml
+    - include: tasks/desktop/window-manager.yml
