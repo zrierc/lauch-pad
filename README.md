@@ -4,8 +4,8 @@ Personal scripts for setup, load dotfiles and automate configuration for new env
 
 ### TODO
 
-[ ] Integrate with my dotfiles
-[ ] Setup private config (ssh, git, pass-manager, vpn, etc)
+- [ ] Integrate with my dotfiles
+- [ ] Setup private config (ssh, git, pass-manager, vpn, etc)
 
 ## Pre-Requisite
 
