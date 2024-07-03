@@ -19,3 +19,7 @@
     - include: tasks/programming-languages/rust.yml
     - include: tasks/programming-languages/nvm-node.yml
     - include: tasks/programming-languages/ts-npm-packages.yml
+    - include: tasks/neovim.yml
+    - include: tasks/lunar-nvim.yml
+    - include: tasks/lazy-nvim.yml
+
