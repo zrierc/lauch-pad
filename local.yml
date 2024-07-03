@@ -13,3 +13,4 @@
       - core
   tasks:
     - include: tasks/zsh.yml
+    - include: tasks/core-setup.yml
