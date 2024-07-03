@@ -1,0 +1,7 @@
+- name: Install nasm
+  apt: name=nasm
+  tags:
+    - install
+    - programming-languages
+    - nasm
+    - assembly

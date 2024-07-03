@@ -1,0 +1,18 @@
+- name: Install Python3
+  apt: name=python3
+  tags:
+    - install
+    - programming-languages
+    - python
+    - python3
+    - py
+    
+- name: Install Pip
+  apt: name=python3-pip
+  tags:
+    - install
+    - programming-languages
+    - python
+    - python3
+    - py
+    
