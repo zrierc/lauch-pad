@@ -14,3 +14,8 @@
   tasks:
     - include: tasks/zsh.yml
     - include: tasks/core-setup.yml
+    - include: tasks/programming-languages/nasm.yml
+    - include: tasks/programming-languages/python.yml
+    - include: tasks/programming-languages/rust.yml
+    - include: tasks/programming-languages/nvm-node.yml
+    - include: tasks/programming-languages/ts-npm-packages.yml
