@@ -1,0 +1,60 @@
+# i3, polybar, rofi, picom, dunst
+- name: Install i3 wm
+  become: true
+  apt: name=i3-wm
+  tags:
+    - desktop
+    - i3
+    - window-manager
+
+- name: Install Rofi
+  become: true
+  apt: name=rofi
+  tags:
+    - desktop
+    - rofi
+    - window-manager
+
+- name: Install Polybar
+  become: true
+  apt: name=polybar
+  tags:
+    - desktop
+    - polybar
+    - window-manager
+
+- name: Install Required deps for dunst
+  become: true
+  apt:
+    name: [ "libdbus-1-dev", "libx11-dev", "libxinerama-dev", "libxrandr-dev", "libxss-dev", "libglib2.0-dev", "libpango1.0-dev", "libgtk-3-dev", "libxdg-basedir-dev", "libgdk-pixbuf-2.0-dev", "libnotify-dev"]  
+    tags:
+    - desktop
+    - dunst
+    - notifications
+    - window-manager
+
+- name: Install dunst
+  become: true
+  apt: name=dunst
+  tags:
+    - desktop
+    - dunst
+    - notifications
+    - window-manager
+
+- name: Install Required deps for picom
+  become: true
+  apt:
+    name: ["libconfig-dev", "libdbus-1-dev", "libegl-dev", "libev-dev", "libgl-dev", "libepoxy-dev", "libpcre2-dev", "libpixman-1-dev", "libx11-xcb-dev", "libxcb1-dev", "libxcb-composite0-dev", "libxcb-damage0-dev", "libxcb-glx0-dev", "libxcb-image0-dev", "libxcb-present-dev", "libxcb-randr0-dev", "libxcb-render0-dev", "libxcb-render-util0-dev", "libxcb-shape0-dev", "libxcb-util-dev", "libxcb-xfixes0-dev", "meson", "ninja-build", "uthash-dev", "libx11-dev", "libxinerama-dev", "libxrandr-dev", "libxss-dev", "libglib2.0-dev", "libpango1.0-dev", "libgtk-3-dev", "libxdg-basedir-dev", "libgdk-pixbuf-2.0-dev"]
+  tags:
+    - desktop
+    - picom
+    - window-manager
+
+- name: Install picom
+  become: true
+  apt: name=picom
+  tags:
+    - desktop
+    - picom
+    - window-manager
