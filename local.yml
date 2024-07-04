@@ -11,16 +11,89 @@
     tags:
       - install
   tasks:
-    - include: tasks/zsh.yml
-    - include: tasks/core-setup.yml
-    - include: tasks/programming-languages/nasm.yml
-    - include: tasks/programming-languages/python.yml
-    - include: tasks/programming-languages/rust.yml
-    - include: tasks/programming-languages/nvm-node.yml
-    - include: tasks/programming-languages/ts-npm-packages.yml
-    - include: tasks/neovim.yml
-    - include: tasks/lunar-nvim.yml
-    - include: tasks/lazy-nvim.yml
-    - include: tasks/desktop/productivity-apps.yml
-    - include: tasks/desktop/browsers.yml
-    - include: tasks/desktop/window-manager.yml
+    - name: Core Setup
+      include_tasks: tasks/core-setup.yml
+      tags:
+        - core
+        - install
+
+    - name: ZSH
+      include_tasks: tasks/zsh.yml
+      tags:
+        - core
+        - install
+
+    - name: nasm
+      include_tasks: tasks/programming-languages/nasm.yml
+      tags:
+        - core
+        - install
+        - programming-languages
+
+    - name: python
+      include_tasks: tasks/programming-languages/python.yml
+      tags:
+        - core
+        - install
+        - programming-languages
+
+    - name: rust
+      include_tasks: tasks/programming-languages/rust.yml
+      tags:
+        - core
+        - install
+        - programming-languages
+
+    - name: nvm and node
+      include_tasks: tasks/programming-languages/nvm-node.yml
+      tags:
+        - core
+        - install
+        - programming-languages
+
+    - name: ts and npm packages 
+      include_tasks: tasks/programming-languages/ts-npm-packages.yml
+      tags:
+        - core
+        - install
+        - programming-languages
+
+    - name: neovim
+      include_tasks: tasks/neovim.yml
+      tags:
+        - core
+        - install
+        - neovim
+
+    - name: Neovim distro [LunarVim]
+      include_tasks: tasks/lunar-nvim.yml
+      tags:
+        - lvim
+        - neovim
+
+    - name: Neovim distro [Lazy-Vim]
+      include_tasks: tasks/lazy-nvim.yml
+      tags:
+        - lazyvim
+        - neovim
+
+    - name: Productivity Apps
+      include_tasks: tasks/desktop/productivity-apps.yml
+      tags:
+        - productivity
+        - desktop
+        - install
+
+    - name: Browsers
+      include_tasks: tasks/desktop/browsers.yml
+      tags:
+        - browsers
+        - desktop
+        - install
+
+    - name: Window Manager [i3, polybar, rofi, dunst]
+      include_tasks: tasks/desktop/window-manager.yml
+      tags:
+        - window-manager
+        - desktop
+        - install
