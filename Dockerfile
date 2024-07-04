@@ -4,11 +4,12 @@ ARG TAGS
 WORKDIR /usr/local/bin
 ARG DEBIAN_FRONTEND=noninteractive
 
+RUN apt update && \
+  apt upgrade -y && \
+  apt install -y software-properties-common && \
   apt-add-repository -y ppa:ansible/ansible && \
-  apt-get update && \
-  apt-get install -y curl git ansible build-essential && \
-  apt-get clean autoclean && \
-  apt-get autoremove --yes
+  apt-add-repository -y ppa:neovim-ppa/stable && \
+  apt install -y curl git ansible build-essential neovim
 
 FROM base AS test
 ARG TAGS
