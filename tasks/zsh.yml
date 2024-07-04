@@ -13,7 +13,7 @@
   tags: *tags_zsh_tasks
 
 - name: Install oh-my-zsh
-  shell: "export ZSH='/home/{{ zrie }}/.config' && curl -L https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh > /tmp/omz-installer && chmod +x /tmp/omz-installer && /tmp/omz-installer"
+  shell: "export ZSH='/home/{{ user }}/.config/.oh-my-zsh' && curl -L https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh > /tmp/omz-installer && chmod +x /tmp/omz-installer && /tmp/omz-installer"
   when: omz_stats.stat.exists == False
   become_user: "{{ user }}"
   tags: *tags_zsh_tasks
@@ -25,6 +25,6 @@
   tags: *tags_zsh_tasks
 
 - name: Install Starship
-  shell: curl -sS https://starship.rs/install.sh > /tmp/starship-installer && chmod +x /tmp/starship-installer && /tmp/starship-installer
+  shell: curl -sS https://starship.rs/install.sh > /tmp/starship-installer && chmod +x /tmp/starship-installer && /tmp/starship-installer -y
   become_user: "{{ user }}"
   tags: *tags_zsh_tasks

@@ -6,6 +6,6 @@
     - lazyvim
 
 - name: Cleanup Repo
-  Shell: "rm -rf /home/{{ name }}/.config/nvim/.git"
+  shell: "rm -rf /home/{{ user }}/.config/nvim/.git"
   tags:
     - lazyvim

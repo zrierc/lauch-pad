@@ -17,7 +17,7 @@
 - name: Install Network Utils
   become: true
   apt:
-    name: [ "net-utils", "traceroute", "tcpdump", "wireshark", "nmap" ]
+    name: [ "net-tools", "traceroute", "tcpdump", "wireshark", "nmap" ]
   tags:
     - install
     - core
