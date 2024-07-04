@@ -1,9 +1,9 @@
-FROM ubuntu:focal AS base
+FROM ubuntu:jammy
+
+ARG TAGS
 WORKDIR /usr/local/bin
-ENV DEBIAN_FRONTEND=noninteractive
-RUN apt-get update && \
-  apt-get upgrade -y && \
-  apt-get install -y software-properties-common curl git build-essential && \
+ARG DEBIAN_FRONTEND=noninteractive
+
   apt-add-repository -y ppa:ansible/ansible && \
   apt-get update && \
   apt-get install -y curl git ansible build-essential && \
