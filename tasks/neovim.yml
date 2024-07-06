@@ -1,7 +1,33 @@
+- name: Install Pre-Requisites for Build Neovim
+  apt:
+    name: [ "ninja-build", "gettext", "cmake", "unzip", "curl", "build-essential" ]
+  tags:
+    - install
+    - neovim
+    - core
+
+- name: Clone Neovim
+  ansible.builtin.git:
+    repo: 'https://github.com/neovim/neovim.git'
+    dest: "{{ lookup('env', 'HOME') }}/neovim"
+    single_branch: yes
+    version: stable
+  tags:
+    - install
+    - neovim
+    - core
+
+- name: Build Neovim
+  shell: "cd {{ lookup('env', 'HOME') }}/neovim && make -j 20"
+  tags:
+    - install
+    - neovim
+    - core
 
 - name: Install Neovim
-  apt: name=neovim
+  become: true
+  shell: "cd {{ lookup('env', 'HOME') }}/neovim && make install"
   tags:
-    - "install"
-    - "neovim"
-    - "core"
+    - install
+    - neovim
+    - core

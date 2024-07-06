@@ -8,8 +8,8 @@ RUN apt update && \
   apt upgrade -y && \
   apt install -y software-properties-common && \
   apt-add-repository -y ppa:ansible/ansible && \
-  apt-add-repository -y ppa:neovim-ppa/stable && \
-  apt install -y curl git ansible build-essential neovim
+  #   apt-add-repository -y ppa:neovim-ppa/unstable && \
+  apt install -y curl git ansible build-essential
 
 RUN addgroup --gid 1000 zrie
 RUN adduser --gecos zrie --uid 1000 --gid 1000 --disabled-password zrie
