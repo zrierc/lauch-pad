@@ -25,7 +25,7 @@
 - name: Install Productivity Tools [CLIs]
   become: true
   apt:
-    name: [ "tmux", "fzf", "xclip", "screenkey", "tldr", "ripgrep", "bat", "ani-cli" ]
+    name: [ "tmux", "fzf", "xclip", "screenkey", "tldr", "ripgrep", "bat" ]
   tags:
     - install
     - core
