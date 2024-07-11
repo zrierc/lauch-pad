@@ -9,7 +9,11 @@
     - nodejs
 
 - name: Install Node LTS
-  shell: nvm install --lts
+  become: yes
+  become_user: "{{ user }}"
+  shell: source ~/.nvm/nvm.sh && nvm install --lts
+  args:
+    executable: /bin/bash
   tags:
     - install
     - programming-languages
